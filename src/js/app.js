@@ -91,6 +91,20 @@ function tabClickHandler(evt) {
   }
 }
 
+function searchInputHandler() {
+  const valueSearch = searchInput.value.toLowerCase();
+
+  todoItems.forEach((item) => {
+    const valueItem = item.querySelector('.todo-task__content').textContent.toLowerCase();
+
+    if (valueItem.indexOf(valueSearch) === -1) {
+      item.classList.add('hidden');
+    } else {
+      item.classList.remove('hidden');
+    }
+  });
+}
+
 function todoListClickHandler(evt) {
   const task = evt.target.closest('.todo-task__item');
 
@@ -122,4 +136,5 @@ function todoListClickHandler(evt) {
 window.addEventListener('unload', windowUnloadHandler);
 formAddTask.addEventListener('submit', formAddTaskSubmitHandler);
 tabsList.addEventListener('click', tabClickHandler);
+searchInput.addEventListener('input', searchInputHandler);
 todoList.addEventListener('click', todoListClickHandler);
