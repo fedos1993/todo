@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\frontend-webpack-boilerplate-master"
+		},
+		{
+			"path": "..\\todo-1"
+		}
+	],
+	"settings": {}
+}
