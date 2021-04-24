@@ -5,6 +5,23 @@ const todoItems = todoList.childNodes;
 const tabsList = document.querySelector('.tabs__list');
 const formAddTask = document.forms.addTask;
 const addTaskField = formAddTask.querySelector('.add-task__textarea');
+const searchInput = document.querySelector('#search');
+
+window.onload = () => {
+  if (localStorage.getItem('area')) {
+    addTaskField.value = localStorage.getItem('area');
+  }
+
+  todoList.innerHTML = localStorage.getItem('todoItems');
+};
+
+function updateTodoItems() {
+  localStorage.setItem('todoItems', todoList.innerHTML);
+}
+
+function windowUnloadHandler() {
+  localStorage.setItem('area', addTaskField.value);
+}
 
 function makeElement(tagName, className, text) {
   const element = document.createElement(tagName);
@@ -41,6 +58,8 @@ function formAddTaskSubmitHandler(evt) {
   }
 
   addTaskField.value = '';
+  localStorage.removeItem('area');
+  updateTodoItems();
 }
 
 function tabClickHandler(evt) {
@@ -95,10 +114,12 @@ function todoListClickHandler(evt) {
     } else {
       taskContent.classList.toggle('todo-task__content--completed');
     }
+
+    updateTodoItems();
   }
 }
 
+window.addEventListener('unload', windowUnloadHandler);
 formAddTask.addEventListener('submit', formAddTaskSubmitHandler);
 tabsList.addEventListener('click', tabClickHandler);
 todoList.addEventListener('click', todoListClickHandler);
-
