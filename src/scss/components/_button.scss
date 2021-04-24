@@ -1,4 +1,3 @@
-
 .button {
   font-weight: 500;
   font-size: 14px;
@@ -8,28 +7,58 @@
   color: #FFFFFF;
   text-transform: uppercase;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.4);
+  transition: all .3s ease-out;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 
+      0 5px 10px rgba(0, 0, 0, 0.2),
+      inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+    color: #e5e5e5;
+  }
 
   &-remove {
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    background: rgba(196, 196, 196, 0.5) url("../images/design/delete.svg") no-repeat center center;
+    background:rgba(196, 196, 196, 0.5) url("../images/design/delete.svg") no-repeat center center;
+  
+    &:hover {
+      background-color: #f87070;
+    }
   }
 
   &--add {
     width: 191px;
     background-color: #2F80ED;
+
+    &:hover {
+      background-color: #5899f0;
+    }
   }
 
   &--important {
     width: 183px;
     background-color: #38b46c;
     border-radius: 18px;
+
+    &:hover {
+      background-color: #5fc389;
+    }
   }
 
   &--unimportant {
     width: 183px;
     background-color: #c2c2c2;
     border-radius: 18px;
+
+    &:hover {
+      background-color: #c8c8c8;
+    }
   }
 }
