@@ -2,6 +2,7 @@ import '../scss/app.scss';
 
 const todoList = document.querySelector('.todo-task__list');
 const todoItems = todoList.childNodes;
+const tabsList = document.querySelector('.tabs__list');
 const formAddTask = document.forms.addTask;
 const addTaskField = formAddTask.querySelector('.add-task__textarea');
 
@@ -40,8 +41,35 @@ function formAddTaskSubmitHandler(evt) {
   }
 
   addTaskField.value = '';
-  localStorage.removeItem('area');
-  updateTodoItems();
+}
+
+function tabClickHandler(evt) {
+  const { target } = evt;
+  const tabCurrent = tabsList.querySelector('.tabs__link--current');
+
+  if (target.tagName === 'A') {
+    evt.preventDefault();
+    tabCurrent.classList.remove('tabs__link--current');
+    target.classList.add('tabs__link--current');
+  }
+
+  todoItems.forEach((item) => {
+    item.classList.remove('hidden');
+  });
+
+  if (target.id === 'tab-done') {
+    todoItems.forEach((item) => {
+      if (!item.querySelector('.todo-task__content--completed')) {
+        item.classList.add('hidden');
+      }
+    });
+  } else if (target.id === 'tab-active') {
+    todoItems.forEach((item) => {
+      if (item.querySelector('.todo-task__content--completed')) {
+        item.classList.add('hidden');
+      }
+    });
+  }
 }
 
 function todoListClickHandler(evt) {
@@ -67,11 +95,10 @@ function todoListClickHandler(evt) {
     } else {
       taskContent.classList.toggle('todo-task__content--completed');
     }
-
-    updateTodoItems();
   }
 }
 
 formAddTask.addEventListener('submit', formAddTaskSubmitHandler);
+tabsList.addEventListener('click', tabClickHandler);
 todoList.addEventListener('click', todoListClickHandler);
 
