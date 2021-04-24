@@ -1,0 +1,35 @@
+
+.button {
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.4);
+
+  &-remove {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: rgba(196, 196, 196, 0.5) url("../images/design/delete.svg") no-repeat center center;
+  }
+
+  &--add {
+    width: 191px;
+    background-color: #2F80ED;
+  }
+
+  &--important {
+    width: 183px;
+    background-color: #38b46c;
+    border-radius: 18px;
+  }
+
+  &--unimportant {
+    width: 183px;
+    background-color: #c2c2c2;
+    border-radius: 18px;
+  }
+}
