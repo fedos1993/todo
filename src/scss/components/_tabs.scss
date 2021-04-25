@@ -1,0 +1,53 @@
+
+.tabs {
+  padding: 0 24px;
+  
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    border-top: 1px solid #E2E2E2;
+    max-width: 759px;
+  }
+  
+  &__item {
+    width: 175px;
+  }
+
+  &__link {
+    text-align: center;
+    display: block;
+    height: 50px;
+    padding-top: 20px;
+    border-top: 4px solid transparent;
+    cursor: pointer;
+    font-weight: 900;
+    color: #53565A;
+    opacity: 0.5;
+    text-decoration: none;
+    transition: all .3s ease-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--current {
+      border-top: 4px solid #2F80ED;
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 0;
+
+    &__list {
+      width: 100%;
+    }
+      
+    &__item {
+      width: 33.3333%;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo app</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header"> 
+    <h1 class="visually-hidden">The to do list app</h1>
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="header__logo">
+          <img class="header__logo-image" src="./images/content/logo.svg" alt="Senla logo" width="174" height="44">
+        </div>
+        <div class="search">
+          <label class="visually-hidden" for="search">Search task for to do</label>
+          <input class="search__field" id="search" type="search" placeholder="Search task for to do">
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">  
+    <div class="main__container container">
+      <section class="tabs">
+        <h2 class="visually-hidden">Sorting tasks</h2>
+        <ul class="tabs__list">
+          <li class="tabs__item">
+            <a class="tabs__link tabs__link--current" id="tab-all" href="#">All</a>
+          </li>
+          <li class="tabs__item">
+            <a class="tabs__link" id="tab-active" href="#">Active</a>
+          </li>
+          <li class="tabs__item"> 
+            <a class="tabs__link" id="tab-done" href="#">Done</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="add-task">
+        <h2 class="visually-hidden">Adding tasks</h2>
+        <form class="add-task__form" action="#" name="addTask" method="POST">
+          <label class="add-task__label" for="taskInput">New Task</label>
+          <textarea class="add-task__textarea" name="task-input" id="taskInput" cols="30" rows="3" required></textarea>
+          <button class="add-task__button button button--add" type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="todo-task">
+        <h2 class="visually-hidden">Task list</h2>
+        <ul class="todo-task__list">
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

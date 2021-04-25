@@ -1,0 +1,26 @@
+.main {
+  min-height: 928px;
+
+  &__container {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 903px;
+      height: 735px;
+      position: absolute;
+      top: 125px;
+      z-index: -1;
+      right: -17px;
+      background: url("../images/design/taking_notes.svg") top center no-repeat; 
+      background-size: 100% auto; 
+
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+        top: 125px; 
+        background-size: 100% auto; 
+      }
+    }
+  }
+}
+   
