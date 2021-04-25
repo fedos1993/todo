@@ -3,4 +3,4 @@
 ## Почта
 fedosgrodno@gmail.com
 ## netlify
-[Ссылка на деплой приложения Todo](https://senla-save-life.netlify.app/)
+[Ссылка на деплой приложения Todo](https://senla-todo-app.netlify.app/)
