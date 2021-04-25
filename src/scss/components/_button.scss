@@ -61,4 +61,24 @@
       background-color: #c8c8c8;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    &__content {
+      display: none;
+    }
+
+    &--important,
+    &--unimportant {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      background-image: url("../images/design/star_border.svg"); 
+      background-repeat: no-repeat;
+      background-position: center center;
+    }  
+
+    &-remove {
+      background-color: #f87070;
+    }
+  }
 }

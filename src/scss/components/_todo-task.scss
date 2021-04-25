@@ -19,7 +19,7 @@
     border-radius: 4px;
     border: 1px solid transparent;
     outline: none;
-    transition: all .5s ease-out;
+    transition: all .3s ease-out;
   
     &:last-child {
       margin-bottom: 0;
@@ -35,7 +35,7 @@
       }
 
       .todo-task__buttons {
-        visibility: visible;
+        display: flex;
       }
     }
   }
@@ -67,9 +67,27 @@
     top: 11px;
     right: 12px;
     width: 244px;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
-    visibility: hidden;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__buttons {
+      display: flex;
+      width: 114px;
+    }
+
+    &__item {
+      &:hover,
+      &:focus {
+        .todo-task__content {
+          max-width: 100%;
+        }
+      }
+    }
+    &__content {
+      padding-right: 130px;
+    }
   }
 }
