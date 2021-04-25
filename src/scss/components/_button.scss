@@ -81,4 +81,20 @@
       background-color: #f87070;
     }
   }
+
+  
+  @media screen and (max-width: 640px) {
+    &--important,
+    &--unimportant,
+    &-remove {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+    }
+
+    &--add {
+      width: 150px;
+      padding: 7px 16px;
+    }
+  }
 }

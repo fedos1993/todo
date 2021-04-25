@@ -34,4 +34,8 @@
     margin-top: -6px;
     background: url("../images/design/search.svg") no-repeat center center;   
   }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
