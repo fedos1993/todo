@@ -25,6 +25,7 @@
   "globals": {
     "browser": false,
     "window": true,
-    "document": true
+    "document": true,
+    "localStorage": true
   }
 }
