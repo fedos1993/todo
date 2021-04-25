@@ -36,13 +36,15 @@ function createTodoItem(text) {
   const item = makeElement('li', 'todo-task__item');
   const itemContent = makeElement('p', 'todo-task__content', text);
   const itemButtons = makeElement('div', 'todo-task__buttons');
-  const itemButtonImportant = makeElement('button', 'button button--important', 'Mark important');
+  const itemButtonImportant = makeElement('button', 'button button--important');
+  const textButtonImportant = makeElement('span', 'button__content', 'Mark important');
   const itemButtonRemove = makeElement('button', 'button button-remove');
 
   item.setAttribute('tabindex', 0);
 
   item.appendChild(itemContent);
   item.appendChild(itemButtons);
+  itemButtonImportant.appendChild(textButtonImportant);
   itemButtons.appendChild(itemButtonImportant);
   itemButtons.appendChild(itemButtonRemove);
 
@@ -111,17 +113,18 @@ function todoListClickHandler(evt) {
   if (task) {
     const taskContent = task.querySelector('.todo-task__content');
 
-    if (evt.target.className === 'button button--important' || evt.target.className === 'button button--unimportant') {
+    if (evt.target.closest('.button--important') || evt.target.closest('.button--unimportant')) {
       const buttonImportant = task.querySelector('.button');
+      const buttonContent = buttonImportant.firstChild;
 
       buttonImportant.classList.toggle('button--important');
       buttonImportant.classList.toggle('button--unimportant');
       taskContent.classList.toggle('todo-task__content--important');
 
-      if (buttonImportant.textContent === 'Mark important') {
-        buttonImportant.textContent = 'Not important';
+      if (buttonContent.textContent === 'Mark important') {
+        buttonContent.textContent = 'Not important';
       } else {
-        buttonImportant.textContent = 'Mark important';
+        buttonContent.textContent = 'Mark important';
       }
     } else if (evt.target.className === 'button button-remove') {
       task.remove();
